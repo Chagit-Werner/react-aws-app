@@ -1,0 +1,15 @@
+.service {
+    padding: 10px;
+    margin: 1px;
+    text-align: center;
+}
+#a{
+z-index:-1 !important
+}
+.k{
+    z-index: -1 !important;
+}
+#card{
+    z-index: -1;
+   
+}
