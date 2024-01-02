@@ -5,6 +5,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
+import Modal from '@mui/material/Modal';
+
 import GlobalStateAdmin from '../../AppStore/GlobalStateAdmin';
 
 
@@ -21,16 +23,40 @@ const SetDetails = observer(() => {
     logo: GlobalStateAdmin.business.logo,
     description:GlobalStateAdmin.business.description,
   });
-  
+  1
   function handleSubmit(e) {
     e.preventDefault()
     GlobalStateAdmin.updateDetailsAdmin(data)
     GlobalStateAdmin.setIsStateSetting(false);
     GlobalStateAdmin.setEnableButtons(false);
-  }
 
+    
+  }
+  const [open, setOpen] = useState(true);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+  };
   return (
-    <form onSubmit={handleSubmit}>
+
+    
+    <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+    <form onSubmit={handleSubmit} 
+    style={style}
+    >
       <Card
         variant="outlined"
         orientation="horizontal"
@@ -57,6 +83,7 @@ const SetDetails = observer(() => {
       </Card>
 
     </form>
+     </Modal>
   )
 })
 export default SetDetails;

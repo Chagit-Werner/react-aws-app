@@ -15,6 +15,8 @@ import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
 
 
+
+
 function PaperComponent(props) {
     return (
         <Draggable
@@ -44,7 +46,9 @@ export default function User() {
         <ShowDetails></ShowDetails>
 
         {/* תצוגת שירותי בעל העסק */}
+        <div id='services-user-page'>
         <Services></Services>
+        </div>
 
         {/* הדיאלוג מוצג בדף זה כי בעקרון הוא סגור. בפתחתו עוברים למסך ה-FORM */}
         <Button variant="outlined" onClick={handleClickOpen}> make an appointment  </Button>

@@ -45,7 +45,7 @@ initialAppointments = async () => {
         else if (response.status == 400)
         Swal.fire({
           title: "The time you wanted to schedule is taken. Try to schedule another time!!",
-          text: "You have an appointment!",
+          text: "You don't have an appointment!",
           icon: "error",
           showConfirmButton:false, timer:5000
         });

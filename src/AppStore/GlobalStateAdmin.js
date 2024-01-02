@@ -19,7 +19,7 @@ class GlobalStateAdmin {
   isAdmin = false;
   isStateSetting = false;
   isNewService = false;
-  enableButtons = false;
+  enableButton = false;
 
   constructor() {
     //observable יצירת
@@ -28,7 +28,7 @@ class GlobalStateAdmin {
 
       isNewService: observable,
       isStateSetting: observable,
-      enableButtons: observable,
+      enableButton: observable,
       isAdmin: observable,
     
       setIsStateSetting: action,
